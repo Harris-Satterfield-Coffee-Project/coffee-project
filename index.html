@@ -13,7 +13,9 @@
 <main>
         <div id="coffees"></div>
 </main>
+<!--User Inputs-->
 <section>
+    <!--Filter Coffees-->
     <form>
         <label for="roast-selection"></label>
         <select id="roast-selection">
@@ -22,10 +24,11 @@
             <option>medium</option>
             <option>dark</option>
         </select>
-        <input type="text" placeholder="search">
+        <input type="text" id="filterCoffees" placeholder="search coffee">
         <input id="submit" type="submit" />
     </form>
     <hr>
+    <!--Add a Coffee-->
     <h2>Add a Coffee</h2>
     <form>
         <label for="add-roast"></label>
@@ -35,8 +38,8 @@
             <option>medium</option>
             <option>dark</option>
         </select>
-        <input type="text" placeholder="coffee name" id="">
-        <input id="submit" type="submit" />
+        <input type="text" placeholder="coffee name" id="newCoffee">
+        <input id="enterNewCoffee" type="submit" />
     </form>
 </section>
 
