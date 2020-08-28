@@ -4,31 +4,51 @@
     <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
 <body>
+<header>
     <h1>Coffee!</h1>
-
+</header>
+<main>
+        <div id="coffees"></div>
+</main>
+<section>
     <form>
         <label for="roast-selection"></label>
         <select id="roast-selection">
+
             <option>light</option>
             <option>medium</option>
             <option>dark</option>
         </select>
+        <input type="text" placeholder="search">
         <input id="submit" type="submit" />
     </form>
+    <hr>
+    <h2>Add a Coffee</h2>
+    <form>
+        <label for="add-roast"></label>
+        <select id="add-roast">
 
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>NAME</th>
-                <th>ROAST</th>
-            </tr>
-        </thead>
-        <tbody id="coffees"></tbody>
-    </table>
+            <option>light</option>
+            <option>medium</option>
+            <option>dark</option>
+        </select>
+        <input type="text" placeholder="coffee name" id="">
+        <input id="submit" type="submit" />
+    </form>
+</section>
 
-    <script src="main.js"></script>
+
+
+
+
+
+
+<script src="main.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </body>
 </html>
