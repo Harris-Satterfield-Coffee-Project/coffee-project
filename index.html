@@ -28,18 +28,23 @@
         <input id="submit" type="submit"/>
     </form>
     <hr>
-    <!--Add a Coffee-->
+
+<!--    Add a Coffee-->
     <h2>Add a Coffee</h2>
-    <form>
-        <label for="add-roast"></label>
-        <select id="add-roast">
-            <option>light</option>
-            <option>medium</option>
-            <option>dark</option>
-        </select>
-        <input type="text" placeholder="coffee name" id="newCoffee">
-        <input id="enterNewCoffee" type="submit" />
+
+    <form name="createCoffee">
+        <div>
+            <select id="add-roast">
+                <option>light</option>
+                <option>medium</option>
+                <option>dark</option>
+            </select>
+            <label for="addRoast"></label>
+            <input id="addRoast"   name="addRoast" type="text" placeholder="New Coffee Name" >
+                <input id="createSubmit"  type="submit">
+        </div>
     </form>
+
 </section>
 
 

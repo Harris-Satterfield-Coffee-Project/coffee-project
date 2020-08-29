@@ -18,8 +18,10 @@ function renderCoffees(coffees) {
     return html;
 }
 
-function updateCoffees(e) {
-    e.preventDefault(); // don't submit the form, we just want to update the data
+//updates coffee list!*******
+
+var updateCoffees = function() {
+    // e.preventDefault(); // don't submit the form, we just want to update the data
     var selectedRoast = roastSelection.value;
     var filteredCoffees = [];
     coffees.forEach(function(coffee) {
@@ -39,23 +41,17 @@ function searchCoffees(){
         tbody.innerHTML = renderCoffees(filteredCoffees);
     });
 }
-var createCoffee = document.querySelector('#enterNewCoffee');
-createCoffee.addEventListener('click', function () {
-    var newRoast = document.getElementById("add-roast");
-    var newCoffeeName = document.getElementById('enterNewCoffee');
 
-    if (newCoffeeName !== ""){
-        newCoffee(newRoast.value, newCoffeeName.value);
-        updateCoffees();
-    }
-});
+//adds to array of objects
 
-var newCoffee = function (type, name) {
-    var newCoffeeObj = {id: coffees.length + 1, name: name, roast: type};
-    console.log(newCoffeeObj);
-    coffees.push(newCoffeeObj);
-    console.log(coffees);
-};
+var newCoffee = function (name, type){
+    var coffeeObj = {id: coffees.length + 1, name: name, roast: type}
+
+    coffees.push(coffeeObj)
+}
+
+
+
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 var coffees = [
@@ -75,13 +71,33 @@ var coffees = [
     {id: 14, name: 'French', roast: 'dark'},
 ];
 
+//getting info from HTML*******
+
 var selectedCoffee = document.querySelector('#filterCoffees')
 var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
+var newCoffeeSubmit = document.querySelector('#createSubmit');
 
 
 tbody.innerHTML = renderCoffees(coffees);
 
+
+//event listener for search coffee****
+
 submitButton.addEventListener('click', updateCoffees);
 selectedCoffee.addEventListener('keyup', searchCoffees);
+
+
+//creat coffee event listener*********
+
+newCoffeeSubmit.addEventListener('click', function(e){
+    e.preventDefault();
+    var roastType = document.querySelector("#add-roast");
+    var coffeeName = document.querySelector("#addRoast");
+
+    if(coffeeName !== " ") {
+        newCoffee(coffeeName.value, roastType.value);
+        updateCoffees();
+    }
+})
