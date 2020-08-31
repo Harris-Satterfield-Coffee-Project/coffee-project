@@ -20,8 +20,8 @@ function renderCoffees(coffees) {
 
 //updates coffee list!*******
 
-var updateCoffees = function(e) {
-    e.preventDefault(); // don't submit the form, we just want to update the data
+var updateCoffees = function() {
+    // e.preventDefault(); // don't submit the form, we just want to update the data
     var selectedRoast = roastSelection.value;
     var filteredCoffees = [];
     coffees.forEach(function(coffee) {
@@ -46,11 +46,14 @@ function searchCoffees(){
 
 var newCoffee = function (name, type){
     var coffeeObj = {id: coffees.length + 1, name: name, roast: type}
-
+    // var coffeeObj = {id: coffees.length + 1, name: localName, roast: localRoast}
     coffees.push(coffeeObj)
 }
+localStorage.removeItem(coffees)
+localStorage.setItem('coffees',JSON.stringify(coffees))
 
-
+//  var localName = localStorage.getItem("name")
+// var localRoast = localStorage.getItem("roast")
 
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
@@ -80,6 +83,7 @@ var roastSelection = document.querySelector('#roast-selection');
 var newCoffeeSubmit = document.querySelector('#createSubmit');
 
 
+
 tbody.innerHTML = renderCoffees(coffees);
 
 
@@ -95,6 +99,14 @@ newCoffeeSubmit.addEventListener('click', function(e){
     e.preventDefault();
     var roastType = document.querySelector("#add-roast");
     var coffeeName = document.querySelector("#addRoast");
+
+    // var coffeeFromDb = localStorage.getItem('coffees');
+    // window.onload = (coffeeFromDb) => {
+    //     console.log('page is fully loaded');
+    // };
+    //  JSON.parse(localStorage.getItem('coffees'))
+
+
 
     if(coffeeName !== " ") {
         newCoffee(coffeeName.value, roastType.value);
