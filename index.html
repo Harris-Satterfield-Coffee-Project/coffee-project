@@ -7,14 +7,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="jumbotron">
-    <h1 class="text-center">Coffee!</h1>
+<header class="jumbotron text-center">
+<div id="h1">
+    <h1 class="text-center">Coffee Roasters</h1>
+</div>
 </header>
-<main class="container row">
+<main class="row mx-5">
 
 
     <!--User Inputs-->
-    <section class="col-sm-12 col-md-6">
+    <section class="col-sm-12 col-md-4  col-lg-4">
         <div>
             <!--Filter Coffees-->
 
@@ -34,7 +36,7 @@
             <!--Add a Coffee-->
 
             <form class="w-100">
-                <label for="addRoast"><h4 class="w-100">Add a Coffee</h4></label>
+                <label for="addRoast"><h4 class="w-100">Create your own roast!</h4></label>
                 <input type="text" placeholder="coffee name" id="addRoast" class="w-100">
                 <select id="add-roast" class="w-100">
                     <option>light</option>
@@ -46,10 +48,13 @@
             </form>
         </div>
     </section>
-    <div class="col-sm-12 col-md-6">
+    <div class="col-sm-12 col-md-4 col-lg-4">
         <div id="chalkBoard" class="w-100">
             <div id="coffees" class="w-100 d-flex flex-column"></div>
         </div>
+    </div>
+    <div class="roasterPic col-sm-12 col-md-3 col-lg-4">
+    <img src="images/tyler-nix-BYGuAQWHdVM-unsplash.jpg" width="100%">
     </div>
 <!--    <div class="col-sm-0 col-md-3  mx-5"></div>-->
 </main>

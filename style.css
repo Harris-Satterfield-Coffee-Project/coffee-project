@@ -2,18 +2,24 @@
 /*font-family: 'Gochi Hand', cursive;*/
 /*font-family: 'Just Another Hand', cursive;*/
 * {
-    display: inline-block;
-    margin: 0;
+    /*display: inline-block;*/
+    /*margin: 0;*/
     /*border: solid lightgray .5px;*/
     padding: 0;
-    align-content: center;
+    /*align-content: center;*/
     font-family: 'Gochi Hand', cursive;
 }
 body {
     background-image: url("images/patryk-gauza-vs0tzSHVcac-unsplash.jpg");
 }
 .jumbotron {
-    background: #f4dfbdd1; !important;
+    /*background: #f4dfbdd1; !important;*/
+    background-image: url("images/gif-roasting-better.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    opacity: 80%;
+    border-bottom: black solid 3px;
 }
 h4 {
     color: #f4dfbd; !important;
@@ -32,15 +38,34 @@ h4 {
 #createSubmit {
     background: #764520;
     border-radius: 5px;
-    margin-bottom: .25px;
+    margin-bottom: 5px;
 }
 #chalkBoard {
     border: solid #764520 10px;
     background-image: url("images/chalkboard-or-blackboard.jpg");
-    color: #f4dfbd; !important;
+    color: whitesmoke; !important;
     letter-spacing: 4px;
+    border-radius: 5px;
+    height: 640px;
+    overflow: auto;
 }
-#roast-selection {
+#roast-selection, #add-roast {
     background: #f4dfbdd1; !important;
     border-radius: 5px;
+}
+
+#add-roast {
+    margin-top: 5px;
+}
+
+img {
+    margin-top: 2em;
+  border-radius: 10px;
+
+}
+#h1 {
+    background: #f4dfbdd1 ;
+    border-radius:45%;
+    width: 300px;
+    margin-left: 1.5em;
 }
