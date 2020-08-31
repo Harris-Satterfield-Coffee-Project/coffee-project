@@ -21,11 +21,9 @@ function renderCoffees(coffees) {
 //updates coffee list!*******
 
 var updateCoffees = function() {
-<<<<<<< HEAD
+
     // e.preventDefault(); // don't submit the form, we just want to update the data
-=======
-    //e.preventDefault(); // don't submit the form, we just want to update the data
->>>>>>> 2fb437934c976f69ce0a7f15d6d277c7d3de4a68
+
     var selectedRoast = roastSelection.value;
     var filteredCoffees = [];
     coffees.forEach(function(coffee) {
@@ -59,13 +57,10 @@ var newCoffee = function (name, type){
 localStorage.removeItem(coffees)
 localStorage.setItem('coffees',JSON.stringify(coffees))
 
-<<<<<<< HEAD
+
 //  var localName = localStorage.getItem("name")
 // var localRoast = localStorage.getItem("roast")
 
-
-=======
->>>>>>> 2fb437934c976f69ce0a7f15d6d277c7d3de4a68
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 var coffees = [
     {id: 1, name: 'Light City', roast: 'light'},
@@ -106,26 +101,25 @@ selectedCoffee.addEventListener('keyup', searchCoffees);
 //creat coffee event listener*********
 
 newCoffeeSubmit.addEventListener('click', function(e){
-    e.preventDefault();
-    var roastType = document.getElementById('add-roast');
-    var coffeeName = document.getElementById("addRoast");
+        e.preventDefault();
+        var roastType = document.getElementById('add-roast');
+        var coffeeName = document.getElementById("addRoast");
 
-    localStorage.setItem('name', coffeeName.value);
-    localStorage.setItem('roast', roastType.value);
+        localStorage.setItem('name', coffeeName.value);
+        localStorage.setItem('roast', roastType.value);
 
-    var localName = localStorage.getItem('name');
-    var localRoast = localStorage.getItem('roast');
+        var localName = localStorage.getItem('name');
+        var localRoast = localStorage.getItem('roast');
 
-    // var coffeeFromDb = localStorage.getItem('coffees');
-    // window.onload = (coffeeFromDb) => {
-    //     console.log('page is fully loaded');
-    // };
-    //  JSON.parse(localStorage.getItem('coffees'))
-
+        // var coffeeFromDb = localStorage.getItem('coffees');
+        // window.onload = (coffeeFromDb) => {
+        //     console.log('page is fully loaded');
+        // };
+        //  JSON.parse(localStorage.getItem('coffees'))
 
 
     if(coffeeName !== " ") {
         newCoffee(coffeeName.value, roastType.value);
         updateCoffees();
     }
-})
+});
