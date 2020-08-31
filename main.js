@@ -20,8 +20,8 @@ function renderCoffees(coffees) {
 
 //updates coffee list!*******
 
-var updateCoffees = function(e) {
-    e.preventDefault(); // don't submit the form, we just want to update the data
+var updateCoffees = function() {
+    //e.preventDefault(); // don't submit the form, we just want to update the data
     var selectedRoast = roastSelection.value;
     var filteredCoffees = [];
     coffees.forEach(function(coffee) {
@@ -45,13 +45,13 @@ function searchCoffees(){
 //adds to array of objects
 
 var newCoffee = function (name, type){
+    // var localName = localStorage.getItem('name');
+    // var localRoast = localStorage.getItem('roast');
+
     var coffeeObj = {id: coffees.length + 1, name: name, roast: type}
 
     coffees.push(coffeeObj)
 }
-
-
-
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 var coffees = [
@@ -93,8 +93,14 @@ selectedCoffee.addEventListener('keyup', searchCoffees);
 
 newCoffeeSubmit.addEventListener('click', function(e){
     e.preventDefault();
-    var roastType = document.querySelector("#add-roast");
-    var coffeeName = document.querySelector("#addRoast");
+    var roastType = document.getElementById('add-roast');
+    var coffeeName = document.getElementById("addRoast");
+
+    localStorage.setItem('name', coffeeName.value);
+    localStorage.setItem('roast', roastType.value);
+
+    var localName = localStorage.getItem('name');
+    var localRoast = localStorage.getItem('roast');
 
     if(coffeeName !== " ") {
         newCoffee(coffeeName.value, roastType.value);
