@@ -111,15 +111,19 @@ newCoffeeSubmit.addEventListener('click', function(e){
         var localName = localStorage.getItem('name');
         var localRoast = localStorage.getItem('roast');
 
-        // var coffeeFromDb = localStorage.getItem('coffees');
-        // window.onload = (coffeeFromDb) => {
-        //     console.log('page is fully loaded');
-        // };
-        //  JSON.parse(localStorage.getItem('coffees'))
-
 
     if(coffeeName !== " ") {
         newCoffee(coffeeName.value, roastType.value);
         updateCoffees();
     }
 });
+window.onload = () =>{
+    if (!(localStorage.getItem('coffees') === null)){
+        coffees = JSON.parse(localStorage.getItem('coffees'));
+        console.log('coffees loaded')
+    } else {
+        localStorage.setItem('coffees', JSON.stringify(coffees));
+        updateCoffees();
+        console.log('coffees created')
+    }
+}
