@@ -60,7 +60,7 @@ h4 {
 
 img {
     margin-top: 2em;
-  border-radius: 10px;
+    border-radius: 10px;
 
 }
 #h1 {
@@ -68,4 +68,28 @@ img {
     border-radius:45%;
     width: 300px;
     margin-left: 1.5em;
+}
+
+#footer {
+    margin-top: 3em;
+    min-height: 100px;
+    color: whitesmoke; !important;
+    background-image: url("images/chalkboard-or-blackboard.jpg");
+    border-top: black solid 3px;
+}
+a {
+    color: whitesmoke; !important;
+}
+ul {
+    list-style: none;
+    text-align: center;
+}
+a:visited {
+    color: gray;
+}
+a:hover {
+    color: #764520;
+}
+i {
+    height: 20px;
 }

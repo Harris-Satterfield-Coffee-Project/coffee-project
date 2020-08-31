@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Coffee Roasters</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -16,7 +17,7 @@
 
 
     <!--User Inputs-->
-    <section class="col-sm-12 col-md-4  col-lg-4">
+    <section class="col-sm-12 col-md-6  col-lg-4">
         <div>
             <!--Filter Coffees-->
 
@@ -48,16 +49,35 @@
             </form>
         </div>
     </section>
-    <div class="col-sm-12 col-md-4 col-lg-4">
+    <div class="col-sm-12 col-md-6 col-lg-4">
         <div id="chalkBoard" class="w-100">
             <div id="coffees" class="w-100 d-flex flex-column"></div>
         </div>
     </div>
-    <div class="roasterPic col-sm-12 col-md-3 col-lg-4">
+    <div class="roasterPic d-md-none d-lg-block col-lg-4">
     <img src="images/tyler-nix-BYGuAQWHdVM-unsplash.jpg" width="100%">
     </div>
 <!--    <div class="col-sm-0 col-md-3  mx-5"></div>-->
 </main>
+<footer id="footer" class="row">
+    <div class="col-4 mt-3">
+        <p class="ml-4">Coffee Roasters <br>
+        1234 Coffee Ave. <br>
+        San Antonio, Tx 78250</p>
+    </div>
+    <div class="col-4 mt-3">
+        <ul>
+            <li><a href="#">contact</a></li>
+            <li><a href="#">about</a></li>
+            <li><a href="#">become a vendor</a></li>
+        </ul>
+    </div>
+    <div class="col-4 d-flex justify-content-center align-items-center">
+        <a href=""><i class="fab fa-facebook-square m-3"></i></a>
+        <a href=""><i class="fab fa-twitter-square m-3"></i></a>
+        <a href=""><i class="fab fa-instagram m-3"></i></a>
+    </div>
+</footer>
 
 <script src="main.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
