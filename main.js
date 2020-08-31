@@ -1,10 +1,10 @@
 "use strict"
 
 function renderCoffee(coffee) {
-    var html = '<div class="coffee">';
+    var html = '<div class="coffee d-flex flex-column align-items-center">';
     // html += '<div>' + coffee.id + '</>';
-    html += '<div>' + '<h2>' + coffee.name +'</h2>'+'</div>';
-    html += '<div>' + coffee.roast + '</div>';
+    html += '<div class="mx-4 pt-2">' + '<h3>' + coffee.name + '</h3>' + '</div>';
+    html += '<div class="pb-2 font-">' + coffee.roast + '</div>';
     html += '</div>';
 
     return html;
@@ -20,8 +20,8 @@ function renderCoffees(coffees) {
 
 //updates coffee list!*******
 
-var updateCoffees = function() {
-    // e.preventDefault(); // don't submit the form, we just want to update the data
+var updateCoffees = function(e) {
+    e.preventDefault(); // don't submit the form, we just want to update the data
     var selectedRoast = roastSelection.value;
     var filteredCoffees = [];
     coffees.forEach(function(coffee) {

@@ -1,9 +1,46 @@
-table {
-    border-collapse: collapse;
-    margin: 15px 0;
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Just+Another+Hand&display=swap');
+/*font-family: 'Gochi Hand', cursive;*/
+/*font-family: 'Just Another Hand', cursive;*/
+* {
+    display: inline-block;
+    margin: 0;
+    /*border: solid lightgray .5px;*/
+    padding: 0;
+    align-content: center;
+    font-family: 'Gochi Hand', cursive;
+}
+body {
+    background-image: url("images/patryk-gauza-vs0tzSHVcac-unsplash.jpg");
+}
+.jumbotron {
+    background: #f4dfbdd1; !important;
+}
+h4 {
+    color: #f4dfbd; !important;
+}
+#submit, #createSubmit {
+    background: #764520;
+    border-radius: 5px;
+    margin-top: .25em;
 }
 
-td, th {
-    border: 1px solid black;
-    padding: 5px 10px;
+#filterCoffees, #addRoast {
+    height: 3em;
+    border-radius: 5px;
+    margin-top: .25em;
+}
+#createSubmit {
+    background: #764520;
+    border-radius: 5px;
+    margin-bottom: .25px;
+}
+#chalkBoard {
+    border: solid #764520 10px;
+    background-image: url("images/chalkboard-or-blackboard.jpg");
+    color: #f4dfbd; !important;
+    letter-spacing: 4px;
+}
+#roast-selection {
+    background: #f4dfbdd1; !important;
+    border-radius: 5px;
 }
