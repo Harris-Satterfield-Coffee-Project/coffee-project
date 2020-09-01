@@ -46,18 +46,24 @@ function searchCoffees(){
 
 //adds to array of objects
 
-var newCoffee = function (name, type){
-    // var localName = localStorage.getItem('name');
-    // var localRoast = localStorage.getItem('roast');
+var newCoffee = function (name, type) {
+    var selectedRoast = roastToAdd.value;
+    var coffeeName = coffeeNameInput.value;
+    var coffeeID = coffees.length + 1;
 
-    var coffeeObj = {id: coffees.length + 1, name: name, roast: type}
-    // var coffeeObj = {id: coffees.length + 1, name: localName, roast: localRoast}
+    var coffeeObj = {id: coffeeID, name: coffeeName, roast: selectedRoast}
+
     coffees.push(coffeeObj)
+
+    localStorage.removeItem("coffees")
+    localStorage.setItem('coffees', JSON.stringify(coffees))
+
+    coffeeNameInput.value = "";
+    roastToAdd.value = "light";
+
+    updateCoffees();
+
 }
-localStorage.removeItem(coffees)
-localStorage.setItem('coffees',JSON.stringify(coffees))
-
-
 //  var localName = localStorage.getItem("name")
 // var localRoast = localStorage.getItem("roast")
 
