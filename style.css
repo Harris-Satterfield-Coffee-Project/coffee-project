@@ -48,7 +48,9 @@ h4 {
     margin-bottom: 5px;
 }
 
-
+.row {
+    margin: 0;
+}
 #chalkBoard {
     border: solid #764520 10px;
     background-image: url("images/chalkboard-or-blackboard.jpg");
