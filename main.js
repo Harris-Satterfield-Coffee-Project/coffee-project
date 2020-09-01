@@ -1,5 +1,5 @@
 "use strict"
-
+//populates coffee list on html***
 function renderCoffee(coffee) {
     var html = '<div class="coffee d-flex flex-column align-items-center">';
     // html += '<div>' + coffee.id + '</>';
@@ -19,7 +19,6 @@ function renderCoffees(coffees) {
 }
 
 //updates coffee list!*******
-
 var updateCoffees = function() {
 
     // e.preventDefault(); // don't submit the form, we just want to update the data
@@ -33,6 +32,8 @@ var updateCoffees = function() {
     });
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
+
+//searches non-case sensitive for coffees in list******
 function searchCoffees(){
     console.log('I work.')
     var filteredCoffees = [];
@@ -44,35 +45,30 @@ function searchCoffees(){
     });
 }
 
-//adds to array of objects
 
+//adds to array of objects
 var newCoffee = function (name, type) {
     var selectedRoast = roastType.value;
     var coffeeName = newCoffeeName.value;
     var coffeeID = coffees.length + 1;
-
     var coffeeObj = {id: coffeeID, name: coffeeName, roast: selectedRoast}
-
     coffees.push(coffeeObj)
 
-    localStorage.removeItem("coffees")
+    localStorage.removeItem('coffees')
     localStorage.setItem('coffees', JSON.stringify(coffees))
-
-
-    updateCoffees();
-
 }
+
 
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 var coffees = [
-    {id: 1, name: 'Light City', roast: 'light'},
-    {id: 2, name: 'Half City', roast: 'light'},
+    {id: 1, name: 'Afternoon', roast: 'light'},
+    {id: 2, name: 'Mountain View', roast: 'light'},
     {id: 3, name: 'Cinnamon', roast: 'light'},
-    {id: 4, name: 'City', roast: 'medium'},
+    {id: 4, name: 'Nicaraguan', roast: 'medium'},
     {id: 5, name: 'American', roast: 'medium'},
     {id: 6, name: 'Breakfast', roast: 'medium'},
-    {id: 7, name: 'High', roast: 'dark'},
+    {id: 7, name: 'Costa Rican', roast: 'dark'},
     {id: 8, name: 'Continental', roast: 'dark'},
     {id: 9, name: 'New Orleans', roast: 'dark'},
     {id: 10, name: 'European', roast: 'dark'},
@@ -83,20 +79,15 @@ var coffees = [
 ];
 
 //getting info from HTML*******
-
 var selectedCoffee = document.getElementById('filterCoffees')
 var tbody = document.getElementById('coffees');
 var submitButton = document.getElementById('submit');
 var roastSelection = document.getElementById('roast-selection');
 var newCoffeeSubmit = document.getElementById('createSubmit');
-
-
-
 tbody.innerHTML = renderCoffees(coffees);
 
 
 //event listener for search coffee****
-
 submitButton.addEventListener('click', updateCoffees);
 selectedCoffee.addEventListener('keyup', searchCoffees);
 
@@ -107,19 +98,22 @@ var newCoffeeName = document.getElementById("addRoast");
 
 newCoffeeSubmit.addEventListener('click', function(e){
     e.preventDefault();
-
     if(newCoffeeName !== " ") {
         newCoffee(newCoffeeName.value, roastType.value);
         updateCoffees();
     }
 });
+
+
+//gets items from local storage*******
 window.onload = () =>{
     if (!(localStorage.getItem('coffees') === null)){
         coffees = JSON.parse(localStorage.getItem('coffees'));
+        updateCoffees()
         console.log('coffees loaded')
     } else {
         localStorage.setItem('coffees', JSON.stringify(coffees));
-        updateCoffees();
+
         console.log('coffees created')
     }
 }
