@@ -6,7 +6,6 @@ function renderCoffee(coffee) {
     html += '<div class="mx-4 pt-2">' + '<h3>' + coffee.name + '</h3>' + '</div>';
     html += '<div class="pb-2 font-">' + coffee.roast + '</div>';
     html += '</div>';
-
     return html;
 }
 
@@ -20,7 +19,6 @@ function renderCoffees(coffees) {
 
 //updates coffee list!*******
 var updateCoffees = function() {
-
     // e.preventDefault(); // don't submit the form, we just want to update the data
 
     var selectedRoast = roastSelection.value;
