@@ -51,7 +51,7 @@ var newCoffee = function (name, type) {
     var coffeeID = coffees.length + 1;
     var coffeeObj = {id: coffeeID, name: coffeeName, roast: selectedRoast}
     coffees.push(coffeeObj)
-
+    console.log(localStorage.getItem('coffees').toUpperCase())
     localStorage.removeItem('coffees')
     localStorage.setItem('coffees', JSON.stringify(coffees))
 }
